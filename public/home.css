@@ -1,0 +1,67 @@
+html {
+  background-color: #060108;
+}
+
+#intro {
+  width: 40rem;
+  display: block;
+  position: relative;
+  margin: 10rem auto;
+  text-align: center;
+}
+
+h1 {
+  color: #EE7064;
+  font-size: 50px;
+  font-family: 'DM Serif Text', serif;
+}
+
+.begin-button {
+  font-size: 40px;
+  border-radius: 20px;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: #F3F6B4;
+  font-family: 'Muli', sans-serif;
+  font-weight: 800;
+  color: #060108;
+  transition: color .5s ease;
+}
+
+.begin-button:hover {
+  cursor: pointer;
+  color: #F7C360;
+}
+
+@media only screen and (max-width: 860px) {
+  h1 {
+    font-size: 40px;
+  }
+  #intro {
+    width: 30rem;
+  }
+  .begin-button {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .begin-button {
+    font-size: 25px;
+  }
+  #intro {
+    width: 22rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+  }
+  .begin-button {
+    font-size: 20px;
+  }
+  #intro {
+    width: 15rem;
+  }
+}

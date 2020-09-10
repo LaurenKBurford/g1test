@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>Ontario G1 Practice Test</title>
+    <link rel="stylesheet" href="game.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <section id="question">
+
+      <img id="questionImage" src="">
+      <p id="question-p"></p>
+
+        <div class="answer">
+          <input class="default-check" type="radio" name="answers" value="one">
+          <span class="check"></span>
+          <label id="one" for="one"></label>
+        </div>
+
+        <div class="answer">
+          <input class="default-check" type="radio" name="answers" value="two">
+          <span class="check"></span>
+          <label id="two" for="two"></label>
+        </div>
+
+        <div class="answer">
+          <input class="default-check" type="radio" name="answers" value="three">
+          <span class="check"></span>
+          <label id="three" for="three"></label>
+        </div>
+
+        <div class="answer">
+          <input class="default-check" type="radio" name="answers" value="four">
+          <span class="check"></span>
+          <label id="four" for="four"></label>
+        </div>
+
+    </section>
+
+    <div id="result">
+
+      <div id="ex">
+        <svg id="ex-svg" width="130" height="130" viewBox="0 0 150 130">
+            <line class="exone" x1="100" y1="5" x2="5" y2="100" stroke="#e84b3c" stroke-width="18"/>
+            <line class="extwo" x1="5" y1="5" x2="100" y2="100" stroke="#e84b3c" stroke-width="18"/>
+        </svg>
+
+      </div>
+
+      <div id="check">
+        <svg id="check-svg" width="130" height="130" viewBox="0 0 140 160">
+          <polyline class="check" points="0,75 40,120 140,10" fill="none" stroke="#c0ed7b" stroke-width="19" />
+        </svg>
+      </div>
+
+    </div>
+
+    <section id="question-count">
+      <span id="answered"></span><span>/</span><span id="remaining"></span>
+    </section>
+
+    <section id="results">
+
+      <div class="score">
+        <p class="score-title">Score:</p>
+        <p id="percentage"></p>
+        <p id="correct"></p><span>/</span><p id="total"></p>
+      </div>
+
+      <form class="" action="/game" method="post">
+        <a href="index.html"><button type="submit" class="try-again">TRY AGAIN</button></a>
+      </form>
+
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="game.js"></script>
+
+  </body>
+</html>
