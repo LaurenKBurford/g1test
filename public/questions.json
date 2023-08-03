@@ -7,7 +7,7 @@
       "four" : "Winding road ahead",
       "image" : "images/right_of_island.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not enter unless local traffic",
@@ -16,7 +16,7 @@
       "four" : "Means a traffic circle ahead",
       "image" : "images/prohibited.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "I am turning right",
@@ -25,7 +25,7 @@
       "four" : "I am turning left",
       "image" : "images/right_hand_signal.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Roundabout ahead",
@@ -34,7 +34,7 @@
       "four" : "Permissive sign",
       "image" : "images/ab-signs-ex2.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Railway crossing ahead",
@@ -43,7 +43,7 @@
       "four" : "Bump 120 meters ahead",
       "image" : "images/traffic-lights-ahead.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "You must let traffic in the intersection or close to it go first (you must yield)",
@@ -52,7 +52,7 @@
       "four" : "Railway crossing ahead",
       "image" : "images/Give_way_outdoor.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Keep to the left",
@@ -61,7 +61,7 @@
       "four" : "Sharp turn or bend in the road in the direction of the arrow",
       "image" : "images/sax547.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not turn right at the intersection",
@@ -70,7 +70,7 @@
       "four" : "Do not turn left at the intersection",
       "image" : "images/do-not-turn-left.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "A construction sign replacing flagman on duty",
@@ -79,7 +79,7 @@
       "four" : "Road work ahead",
       "image" : "images/construction-sign.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Pedestrian crosswalk ahead",
@@ -88,7 +88,7 @@
       "four" : "Railway crossing ahead",
       "image" : "images/wc4.jpeg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Playground zone sign",
@@ -97,7 +97,7 @@
       "four" : "Direction sign for children",
       "image" : "images/school-zone.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "School zone watch for children playing",
@@ -106,7 +106,7 @@
       "four" : "Destination board, shows directions to nearby towns and cities",
       "image" : "images/alaksa-highway.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "You must come to a complete stop",
@@ -115,7 +115,7 @@
       "four" : "Bump sign 150 meters",
       "image" : "images/stop-sign.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "No right turn permitted",
@@ -124,7 +124,7 @@
       "four" : "Do not make a U-turn",
       "image" : "images/no-u-turn.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Speed limit changes ahead",
@@ -133,7 +133,7 @@
       "four" : "Speed limit for rural school zones",
       "image" : "images/speed-limit-ahead.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Caution school bus crossing",
@@ -142,7 +142,7 @@
       "four" : "Slow traffic on multi-lane roads must keep right",
       "image" : "images/slow-keep-right.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Merge ahead",
@@ -151,7 +151,7 @@
       "four" : "Road turns to the left",
       "image" : "images/passing-lane-ahead.jpg",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Parallel parking permitted",
@@ -160,7 +160,7 @@
       "four" : "Passing permitted",
       "image" : "images/passing-permitted.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "I am turning right",
@@ -169,7 +169,7 @@
       "four" : "I am turning left",
       "image" : "images/stopping-hand.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Divided highway ends",
@@ -178,7 +178,7 @@
       "four" : "Narrow bridge ahead",
       "image" : "images/divided-ahead.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "No need to stop for stop signs in the direction of the arrows",
@@ -187,7 +187,7 @@
       "four" : "Vehicles approaching from the direction shown must stop",
       "image" : "images/not-between.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Dead end street ahead",
@@ -196,7 +196,7 @@
       "four" : "Stop sign ahead",
       "image" : "images/slow-moving-vehicle-sign.jpg",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Paved surface ends ahead",
@@ -205,7 +205,7 @@
       "four" : "Bridge ahead",
       "image" : "images/pavement-ends.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Winding road ahead",
@@ -214,7 +214,7 @@
       "four" : "Road slippery when wet",
       "image" : "images/A15826.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Snowmobiles cross this road",
@@ -223,7 +223,7 @@
       "four" : "Caution: animal crossing",
       "image" : "images/snowmobile-crossing.jpeg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Exit to the right",
@@ -232,7 +232,7 @@
       "four" : "Crosswalk ahead",
       "image" : "images/sharp-curves.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "The driver in this lane must turn right",
@@ -241,7 +241,7 @@
       "four" : "Advance warning of danger",
       "image" : "images/turn-right.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Construction zone",
@@ -250,7 +250,7 @@
       "four" : "Bump or uneven pavement on the road ahead",
       "image" : "images/uneven-ahead.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not pass",
@@ -259,7 +259,7 @@
       "four" : "Keep to the left",
       "image" : "images/do-not-enter.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "I am turning left",
@@ -268,7 +268,7 @@
       "four" : "I am turning right",
       "image" : "images/left_hand_light.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Restricted parking available",
@@ -277,7 +277,7 @@
       "four" : "Do not park in the area between the signs",
       "image" : "images/no-parking-signs.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Truck route",
@@ -286,7 +286,7 @@
       "four" : "Passing allowed",
       "image" : "images/dang-goods.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Divided highway ends",
@@ -295,7 +295,7 @@
       "four" : "Road under construction",
       "image" : "images/divided-ends.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Left turn only",
@@ -304,7 +304,7 @@
       "four" : "Right turn only",
       "image" : "images/x-w1-4l-1.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Road merges with another road",
@@ -313,7 +313,7 @@
       "four" : "Curb lane of cross street ahead",
       "image" : "images/share-road.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "No parking",
@@ -322,7 +322,7 @@
       "four" : "Do not enter",
       "image" : "images/dang-goods-prohib.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Pedestrians not permitted",
@@ -331,7 +331,7 @@
       "four" : "Watch for pedestrians and be prepared to share the road with them",
       "image" : "images/watch-pedestrians.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Pedestrians allowed",
@@ -340,7 +340,7 @@
       "four" : "Cross walk ends",
       "image" : "images/no-pedes.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Scenic view ahead",
@@ -349,7 +349,7 @@
       "four" : "Zoo ahead",
       "image" : "images/deer-xing.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Only bicycles permitted ahead",
@@ -358,7 +358,7 @@
       "four" : "Bicycles not allowed ahead",
       "image" : "images/bicycles-ahead.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Right turn only",
@@ -367,7 +367,7 @@
       "four" : "Left turn only",
       "image" : "images/arrowboards.jpg",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Roundabout ahead; reduce speed",
@@ -376,7 +376,7 @@
       "four" : "You may exit if you remain in the right hand lane",
       "image" : "images/roundabout-ahead.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "You can park your bicycle here",
@@ -385,7 +385,7 @@
       "four" : "Do not leave your bicycle here",
       "image" : "images/no-cycling.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Pavement narrows ahead",
@@ -394,7 +394,7 @@
       "four" : "Divided highway ahead",
       "image" : "images/pavement-narrows.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "The lane is only for two-way left turns",
@@ -403,7 +403,7 @@
       "four" : "Two way traffic ends",
       "image" : "images/two-way-left-turn.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not enter ahead",
@@ -412,7 +412,7 @@
       "four" : "No parking ahead",
       "image" : "images/do-not-pass.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Two way traffic",
@@ -421,7 +421,7 @@
       "four" : "Intersection ahead; the arrow shows which direction of traffic has the right of way",
       "image" : "images/intersection-ahead.jpg",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Railway crossing ahead",
@@ -430,7 +430,7 @@
       "four" : "Do not stop",
       "image" : "images/dead-end.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not turn right during the times shown",
@@ -439,7 +439,7 @@
       "four" : "Do not make a U-turn",
       "image" : "images/no-left-durning-times.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Only right turn allowed",
@@ -448,7 +448,7 @@
       "four" : "Do not turn left",
       "image" : "images/8703155.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "There may be water flowing over the road",
@@ -457,7 +457,7 @@
       "four" : "Construction zone ahead",
       "image" : "images/water-over-road.png",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Slight bend or curve in the road ahead",
@@ -466,7 +466,7 @@
       "four" : "Right turn allowed",
       "image" : "images/q5083119.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not turn left",
@@ -475,7 +475,7 @@
       "four" : "Through traffic permitted",
       "image" : "images/not-straight.png",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Right lane ends ahead",
@@ -484,7 +484,7 @@
       "four" : "Hidden intersection ahead",
       "image" : "images/w42main.jpg",
       "answer" : "one",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Do not turn right",
@@ -493,7 +493,7 @@
       "four" : "Two way traffic ahead",
       "image" : "images/one-direction.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Lane ahead closed",
@@ -502,7 +502,7 @@
       "four" : "Construction zone one kilometer ahead",
       "image" : "images/construction-1-km.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Yield right-of-way",
@@ -511,7 +511,7 @@
       "four" : "Dead end street ahead",
       "image" : "images/stop-ahead.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Bumpy road ahead",
@@ -520,7 +520,7 @@
       "four" : "Winding road ahead",
       "image" : "images/pavement-slippery.png",
       "answer" : "two",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Safety check ahead",
@@ -529,7 +529,7 @@
       "four" : "Steep hill ahead; you may need to use a lower gear",
       "image" : "images/steep-hill.png",
       "answer" : "four",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Dead end ahead",
@@ -538,7 +538,7 @@
       "four" : "Hidden driveway ahead",
       "image" : "images/1303407539.jpg",
       "answer" : "three",
-      "question" : ""
+      "question" : "What does this sign mean?"
     },
     {
       "one" : "Only when passing a vehicle turning left and only if the right shoulder is paved",

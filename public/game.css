@@ -1,10 +1,10 @@
 html {
-  background-color: #060108;
+  background-color: #2d2e2e;
 }
 
 #question {
-    width: 48rem;
-    margin: 5rem auto;
+    width: 40%;
+    margin: 5rem auto 2.5rem;
     transition: opacity 1.5s ease-in-out;
 }
 
@@ -13,9 +13,10 @@ html {
   top: 0;
   right: 0;
   margin: 3rem;
-  font-size: 40px;
-  color: #F7C360;
-  font-family: 'Muli', sans-serif;
+  font-size: 30px;
+  color: #e4f2f7;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
 }
 
 #answered,
@@ -24,9 +25,10 @@ html {
 }
 
 #result {
-  position: absolute;
-  top: 8rem;
-  right: 2rem;
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 #ex,
@@ -74,61 +76,69 @@ html {
 }
 
 .answer {
-  margin: 2rem auto;
+  margin: 2rem 1rem;
   display: block;
 }
 
 label {
-  font-size: 30px;
-  color: #F3F6B4;
-  font-family: 'Muli', sans-serif;
-  margin-left: 3rem;
+  font-size: 18px;
+  color: #e8eded;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  margin-left: 2rem;
   display: block;
 }
 
 #questionImage {
   max-height: 15rem;
   width: auto;
-  max-width: 25rem;
+  max-width: 100%;
   display: block;
   margin: 8rem auto 3rem;
   object-fit: contain;
 }
 
 #question-p {
-  font-size: 37px;
-  color: #EE7064;
-  font-family: 'Muli', sans-serif;
+  font-size: 23px;
+  line-height: 35px;
+  background-color: #e8eded;
+  color: #2d2e2e;
+  padding: 2rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
   max-width: 40rem;
+  border-radius: 3px;
 }
 
 .default-check {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 1.6rem;
-  width: 1.6rem;
+  height: 1rem;
+  width: 1rem;
   z-index: 2;
   margin-top: 6px;
 }
 
-.check {
-  position: absolute;
-  height: 1.5rem;
-  width: 1.5rem;
-  background-color: #F3F6B4;
-  border: 3px solid #EE7064;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: 6px;
+.default-check:hover ~ .check {
+  background-color:#cf142b !important;
+  border: 2px solid #fff;
 }
 
-.answer:hover input ~ .check {
-  background-color: #F7C360;
+.check {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  background-color: #defcf8;
+  border: 2px solid #94b5b1;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 3px;
 }
 
 .answer input:checked ~ .check {
-  background-color: #60326B !important;
+  background-color: #FDDA16 !important;
+  border: 2px solid #fff;
 }
 
 .check:after {
@@ -141,44 +151,38 @@ label {
   display: block;
 }
 
-.answer .check:after {
- 	top: 6px;
-	left: 6px;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	background: #EE7064;
-}
-
 #results {
-  color: #60326B;
+  color: #e4f2f7;
   display: none;
 }
 
 .score {
-  width: 25rem;
-  display: block;
-  position: relative;
-  margin: 10rem auto 2rem auto;
-  text-align: center;
-  background-color: #F3F6B4;
-  padding: 1rem;
-  padding-bottom: 2rem;
-  border-radius: 20px;
-  font-size: 60px;
-  font-family: 'Muli', sans-serif;
-  font-weight: 700;
+  width: 25%;
+    margin: 10rem auto 4rem;
+    text-align: center;
+    padding: 1rem 0 3rem;
+    border: 3px solid #e4f2f7;
+    font-size: 33px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .score-title {
-  font-size: 60px;
-  color: #EE7064;
-  font-family: 'DM Serif Text', serif;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: 200;
+  color: #defcf8;
+  font-family: 'Oswald', sans-serif;
   margin: 1rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0.5rem;
 }
 
 #percentage {
     margin: 1rem;
+}
+
+.score #correct, .score #total, .score span {
+  font-size: 28px;
 }
 
 #correct,
@@ -188,169 +192,167 @@ label {
 }
 
 .try-again {
+  font-size: 25px;
+  font-weight: 400;
+  border: 7px double #949494;
+  padding: 6px 45px 10px;
+  background-color: #2d2e2e;
+  font-family: 'Oswald', sans-serif;
+  color: #e4f2f7;
+  transition: padding .5s ease, border-radius .5s ease;
   display: block;
-  background-color: #60326B;
-  color: #F7C360;
-  border-radius: 20px;
-  font-size: 40px;
-  font-family: 'Muli', sans-serif;
-  font-weight: 700;
   margin: 1rem auto;
-  padding: 1rem;
-  width: 18rem;
-  text-align: center;
-  margin: auto;
-  transition: color .5s ease;
-  border: none;
   cursor: pointer;
 }
 
-a {
-  text-decoration: none;
+.try-again:hover {
+  cursor: pointer;
+  padding: 6px 10px 10px;
+  border-radius: 10px;
 }
 
-a .try-again:hover {
-  color: #EE7064;
+a:-webkit-any-link {
+  text-decoration: none !important;
 }
 
-@media screen and (max-width: 1100px) {
-  label {
-    font-size: 25px;
+@media screen and (max-width: 1140px) {
+  .score {
+    width: 35%;
   }
   #question-p {
-    font-size: 35px;
+    font-size: 20px;
+    padding: 1.5rem;
+  }
+  label {
+    font-size: 17px;
+    padding-top: 2px;
+  }
+  #question-count {
+    margin: 2rem 1.5rem;
+    font-size: 25px;
   }
 }
 
-@media screen and (max-width: 870px) {
-  #questionImage {
-    margin-top: 8rem;
-  }
-  #ex-svg,
-  #check-svg {
-    width: 110px;
-    height: 110px;
+@media (hover: none) {
+  .default-check:hover ~ .check {
+    background-color: #defcf8 !important;
+      border: 2px solid #94b5b1;
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 1000px) {
   #question {
-    width: 44rem;
+    width: 60%;
   }
+}
+
+@media screen and (max-width: 860px) {
   .score {
-    width: 16rem;
-    font-size: 45px;
-  }
-  .score-title {
-    font-size: 50px;
+    width: 45%;
   }
   .try-again {
-    font-size: 30px;
-  }
-  #ex-svg,
-  #check-svg {
-    width: 80px;
-    height: 80px;
-  }
-  #question-p {
-    font-size: 30px;
-  }
-  #questionImage {
-    margin-top: 7rem;
+    font-size: 21px;
   }
 }
 
-@media screen and (max-width: 755px) {
+@media screen and (max-width: 700px) {
   #question {
-    width: 37rem;
+    width: 70%;
+  }
+  #question-p {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 1rem 1.5rem;
   }
   label {
-    font-size: 20px;
+    font-size: 16px;
+    padding-top: 3px;
   }
-  #question-count {
+  .answer {
+    margin: 1.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .score {
+    width: 55%;
+  }
+  .score-title {
+    font-size: 45px;
+  }
+  .score #correct, .score #total, .score span {
+    font-size: 26px;
+  }
+  #percentage {
     font-size: 30px;
-  }
-  #question-p {
-    font-size: 25px;
-  }
-}
-
-@media screen and (max-width: 649px) {
-  #question {
-    width: 27rem;
-    margin: 1rem;
-  }
-  #question-count {
-    margin: 1rem;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  #question {
-    margin: 3rem 2rem;
-    width: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #result {
-    position: absolute;
-    top: 1rem;
-    right: unset;
-    left: 2rem;
-  }
-  #ex-svg,
-  #check-svg {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  #question-p {
-    font-size: 22px;
-  }
-  label {
-    font-size: 17px;
-    margin-left: 2.5rem;
-  }
-  .check {
-    height: 1.2rem;
-    width: 1.2rem;
-    margin-top: 0px;
-  }
-  .default-check {
-    height: 1.2rem;
-    width: 1.2rem;
-    margin-top: 3px;
-    margin-left: 3px;
-  }
-  .answer .check:after {
-    top: 3px;
-    left: 3px;
-  }
   #question {
-    margin: 3rem 1rem;
+    width: 85%;
+  }
+  #question-p {
+    font-size: 17px;
+  }
+  #question-count {
+    margin: 1.5rem 1rem;
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  #question-p {
-    font-size: 20px;
+  .score {
+    width: 75%;
+    margin: 7rem auto 3rem;
   }
-  label {
+  .score-title {
+    font-size: 40px;
+  }
+  .score #correct, .score #total, .score span {
+    font-size: 24px;
+  }
+  #percentage {
+    font-size: 28px;
+  }
+  .try-again {
+    padding: 4px 29px 8px;
+  }
+  #question {
+    width: 90%;
+  }
+  #question-p {
     font-size: 16px;
   }
+  label {
+    font-size: 15px;
+  }
+  .answer {
+    margin: 1.5rem 0.5rem;
+  }
   #questionImage {
-    max-width: 90vw;
+    margin: 6rem auto 2rem;
   }
 }
 
-@media screen and (max-width: 400px) {
-  #question-p {
-    font-size: 18px;
+@media screen and (max-width: 360px) {
+  .score {
+    width: 80%;
+    margin: 5rem auto 2rem;
   }
-  .answer {
-    margin: 1.5rem auto;
+  .score-title {
+    font-size: 35px;
+  }
+  .score #correct, .score #total, .score span {
+    font-size: 22px;
+  }
+  #percentage {
+    font-size: 26px;
+  }
+  .try-again {
+    padding: 4px 26px 8px;
+  }
+  #questionImage {
+    margin: 5rem auto 1rem;
   }
 }

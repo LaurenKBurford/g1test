@@ -5,6 +5,8 @@ var questionsAnswered = "";
 var questionsTotal = "";
 var questionsRight = 0;
 
+// On page load, get questions from JSON file 
+
 window.addEventListener( "load", function(){
 
   var httpRequest = new XMLHttpRequest();
@@ -21,6 +23,8 @@ window.addEventListener( "load", function(){
       var length = array.length;
       questionsTotal = length;
 
+// Create a randomized array of all the questions
+
       while (length > 0) {
         var randomNumber = Math.floor(Math.random() * length);
         randomizedArray.push(array[randomNumber]);
@@ -28,10 +32,13 @@ window.addEventListener( "load", function(){
         length--;
       }
 
+// Create the first question
+
       var firstQuestion = randomizedArray.pop();
       currentQuestion = firstQuestion;
       questionsAnswered = 1;
 
+// Insert JSON data into HTML multiple choice question format
 
       $("#questionImage").attr("src", firstQuestion.image);
       $("#one").html(firstQuestion.one);
@@ -99,6 +106,7 @@ function nextSequence(checkAnswer) {
     gameFinished();
   }
 
+
 }
 
 function checkAnswer() {
@@ -113,7 +121,7 @@ function checkAnswer() {
         // Hide check
         setTimeout(function() {
           $("#check").css("display", "none");
-        }, 2500);
+        }, 1500);
 
         // Add one to the number of questions right
         questionsRight++;
@@ -122,20 +130,20 @@ function checkAnswer() {
         setTimeout(function() {
           $("#question").css("opacity", "0");
 
-        }, 1500);
+        }, 500);
 
         // Go to the next question
       setTimeout(function() {
         if (randomizedArray.length > 0) {
           nextSequence();
         }
-      }, 3000);
+      }, 1500);
 
       // Reset correct answer color
       setTimeout(function() {
       let selectedAnswer = $(".answer input:checked").parent();
-      selectedAnswer.find(".check").css({"background-color": "#F3F6B4"});
-      }, 2900);
+      selectedAnswer.find(".check").css({"background-color": "#defcf8"});
+      }, 1700);
 
     } else {
 
@@ -145,31 +153,35 @@ function checkAnswer() {
       }, 300);
 
       // Show correct answer
-      $("#" + currentQuestion.answer).css("color", "#EE7064");
+      $("#" + currentQuestion.answer).css("color", "#cf142b");
+      $("#" + currentQuestion.answer).css("font-weight", "900");
 
       // Hide X
       setTimeout(function() {
         $("#ex").css("display", "none");
-      }, 2500);
+      }, 1500);
 
       // Fade out current question
       setTimeout(function() {
         $("#question").css("opacity", "0");
-      }, 1500);
+      }, 500);
 
       // Go to next question
       setTimeout(function() {
         if (randomizedArray.length > 0) {
           nextSequence();
         }
-      }, 3000);
+      }, 1500);
 
       // Reset correct answer color
       setTimeout(function() {
-      $("#" + currentQuestion.answer).css("color", "#F3F6B4");
+      $("#" + currentQuestion.answer).css("color", "#e8eded");
+      $("#" + currentQuestion.answer).css("font-weight", "400");
       let selectedAnswer = $(".answer input:checked").parent();
-      selectedAnswer.find(".check").css({"background-color": "#F3F6B4"});
-      }, 2900);
+      selectedAnswer.find(".check").css({"background-color": "#defcf8"});
+      }, 500);
+
+      // Reset selected answer colour
 
     }
 
