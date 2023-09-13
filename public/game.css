@@ -2,10 +2,11 @@ html {
   background-color: #2d2e2e;
 }
 
-#question {
-    width: 40%;
-    margin: 5rem auto 2.5rem;
-    transition: opacity 1.5s ease-in-out;
+#question,
+.question {
+  width: 40%;
+  margin: 5rem auto 2.5rem;
+  transition: opacity 1.5s ease-in-out;
 }
 
 #question-count {
@@ -15,8 +16,18 @@ html {
   margin: 3rem;
   font-size: 30px;
   color: #e4f2f7;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 200;
+}
+
+table#right-wrong-counts {
+  font-size: 18px;
+  text-align: right;
+  float: right;
+}
+
+table#right-wrong-counts tr > td:nth-child(2) {
+  padding-left: 8px;
 }
 
 #answered,
@@ -83,7 +94,7 @@ html {
 label {
   font-size: 18px;
   color: #e8eded;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 300;
   margin-left: 2rem;
   display: block;
@@ -104,7 +115,7 @@ label {
   background-color: #e8eded;
   color: #2d2e2e;
   padding: 2rem;
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-weight: 700;
   max-width: 40rem;
   border-radius: 3px;
@@ -120,8 +131,13 @@ label {
   margin-top: 6px;
 }
 
-.default-check:hover ~ .check {
-  background-color:#cf142b !important;
+.answer.review .default-check,
+.answer.review .default-check ~ * {
+  cursor: unset;
+}
+
+.answer:not(.review) .default-check:hover ~ .check {
+  background-color: #cf142b !important;
   border: 2px solid #fff;
 }
 
@@ -137,7 +153,7 @@ label {
 }
 
 .answer input:checked ~ .check {
-  background-color: #FDDA16 !important;
+  background-color: #fdda16 !important;
   border: 2px solid #fff;
 }
 
@@ -158,12 +174,12 @@ label {
 
 .score {
   width: 25%;
-    margin: 10rem auto 4rem;
-    text-align: center;
-    padding: 1rem 0 3rem;
-    border: 3px solid #e4f2f7;
-    font-size: 33px;
-    font-family: 'Oswald', sans-serif;
+  margin: 10rem auto 4rem;
+  text-align: center;
+  padding: 1rem 0 3rem;
+  border: 3px solid #e4f2f7;
+  font-size: 33px;
+  font-family: "Oswald", sans-serif;
 }
 
 .score-title {
@@ -171,17 +187,19 @@ label {
   font-size: 50px;
   font-weight: 200;
   color: #defcf8;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin: 1rem;
   border-bottom: 2px solid;
   padding-bottom: 0.5rem;
 }
 
 #percentage {
-    margin: 1rem;
+  margin: 1rem;
 }
 
-.score #correct, .score #total, .score span {
+.score #correct,
+.score #total,
+.score span {
   font-size: 28px;
 }
 
@@ -197,9 +215,9 @@ label {
   border: 7px double #949494;
   padding: 6px 45px 10px;
   background-color: #2d2e2e;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #e4f2f7;
-  transition: padding .5s ease, border-radius .5s ease;
+  transition: padding 0.5s ease, border-radius 0.5s ease;
   display: block;
   margin: 1rem auto;
   cursor: pointer;
@@ -236,12 +254,13 @@ a:-webkit-any-link {
 @media (hover: none) {
   .default-check:hover ~ .check {
     background-color: #defcf8 !important;
-      border: 2px solid #94b5b1;
+    border: 2px solid #94b5b1;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  #question {
+  #question,
+  .question {
     width: 60%;
   }
 }
@@ -280,7 +299,9 @@ a:-webkit-any-link {
   .score-title {
     font-size: 45px;
   }
-  .score #correct, .score #total, .score span {
+  .score #correct,
+  .score #total,
+  .score span {
     font-size: 26px;
   }
   #percentage {
@@ -309,7 +330,9 @@ a:-webkit-any-link {
   .score-title {
     font-size: 40px;
   }
-  .score #correct, .score #total, .score span {
+  .score #correct,
+  .score #total,
+  .score span {
     font-size: 24px;
   }
   #percentage {
@@ -343,7 +366,9 @@ a:-webkit-any-link {
   .score-title {
     font-size: 35px;
   }
-  .score #correct, .score #total, .score span {
+  .score #correct,
+  .score #total,
+  .score span {
     font-size: 22px;
   }
   #percentage {
