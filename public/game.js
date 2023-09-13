@@ -72,7 +72,9 @@ window.addEventListener("load", function () {
 function populateCount() {
   $("#answered").html(questionsAnswered);
   $("#remaining").html(questionsTotal);
-  $("#wrong-count").html(questionsAnswered - questionsRight - 1);
+  const wrongCount = questionsAnswered - questionsRight - 1;
+  $("#wrong-count").html(wrongCount);
+  if (wrongCount > 0) $("#review-wrong").addClass("has-wrong");
   $("#right-count").html(questionsRight);
 }
 

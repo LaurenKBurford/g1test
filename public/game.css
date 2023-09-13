@@ -20,6 +20,21 @@ html {
   font-weight: 200;
 }
 
+a#review-wrong {
+  display: none;
+}
+
+a#review-wrong svg {
+  stroke: #e4f2f7;
+  fill: #e4f2f7;
+  opacity: 0.5;
+  height: 1rem;
+}
+
+a#review-wrong.has-wrong {
+  display: unset;
+}
+
 table#right-wrong-counts {
   font-size: 18px;
   text-align: right;
@@ -380,4 +395,23 @@ a:-webkit-any-link {
   #questionImage {
     margin: 5rem auto 1rem;
   }
+  #question-count {
+    display: flex;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    position: unset;
+  }
 }
+
+footer {
+  color: #e4f2f7;
+  width: 100%;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  opacity: 0.5;
+}
+
+footer  a:visited, a {
+    color: #e4f2f7;
+  }
