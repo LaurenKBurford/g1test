@@ -3,7 +3,6 @@ function AnswersStore() {
   // load wrongly answered
   try {
     const stored = localStorage.getItem(WRONGLY_ANSWERED_KEY);
-    console.log("stored:", stored);
     if (!stored) throw new Error(WRONGLY_ANSWERED_KEY + " does not exist");
     else this.wronglyAnswered = JSON.parse(stored);
   } catch (e) {
@@ -13,7 +12,6 @@ function AnswersStore() {
 }
 
 AnswersStore.prototype.clear = function clear() {
-  console.log("cleared.");
   this.wronglyAnswered = [];
   localStorage.removeItem(WRONGLY_ANSWERED_KEY);
 };
