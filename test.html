@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Ontario G1 Practice Test</title>
-    <link rel="stylesheet" href="game.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500;600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
 
-    <section id="question">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Ontario G1 Practice Test</title>
+  <link rel="stylesheet" href="game.css">
+  </link>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
 
-      <img id="questionImage" src="">
-      <p id="question-p"></p>
+<body>
 
-        <div class="answer">
-          <input class="default-check" type="radio" name="answers" value="one">
-          <span class="check"></span>
-          <label id="one" for="one"></label>
-        </div>
+  <section id="question">
 
-        <div class="answer">
-          <input class="default-check" type="radio" name="answers" value="two">
-          <span class="check"></span>
-          <label id="two" for="two"></label>
-        </div>
+    <img id="questionImage" src="">
+    <p id="question-p"></p>
 
-        <div class="answer">
-          <input class="default-check" type="radio" name="answers" value="three">
-          <span class="check"></span>
-          <label id="three" for="three"></label>
-        </div>
+    <div class="answer">
+      <input class="default-check" type="radio" name="answers" value="one">
+      <span class="check"></span>
+      <label id="one" for="one"></label>
+    </div>
 
-        <div class="answer">
-          <input class="default-check" type="radio" name="answers" value="four">
-          <span class="check"></span>
-          <label id="four" for="four"></label>
-        </div>
+    <div class="answer">
+      <input class="default-check" type="radio" name="answers" value="two">
+      <span class="check"></span>
+      <label id="two" for="two"></label>
+    </div>
 
-    </section>
+    <div class="answer">
+      <input class="default-check" type="radio" name="answers" value="three">
+      <span class="check"></span>
+      <label id="three" for="three"></label>
+    </div>
 
-    <div id="result">
+    <div class="answer">
+      <input class="default-check" type="radio" name="answers" value="four">
+      <span class="check"></span>
+      <label id="four" for="four"></label>
+    </div>
 
-      <div id="ex">
-        <svg id="ex-svg" width="50" height="50" viewBox="0 0 150 130">
-            <line class="exone" x1="100" y1="5" x2="5" y2="100" stroke="#cf142b" stroke-width="18"/>
-            <line class="extwo" x1="5" y1="5" x2="100" y2="100" stroke="#cf142b" stroke-width="18"/>
-        </svg>
+  </section>
 
-      </div>
+  <div id="result">
 
-      <div id="check">
-        <svg id="check-svg" width="50" height="50" viewBox="0 0 140 160">
-          <polyline class="check" points="0,75 40,120 140,10" fill="none" stroke="#32cf32" stroke-width="19" />
-        </svg>
-      </div>
+    <div id="ex">
+      <svg id="ex-svg" width="50" height="50" viewBox="0 0 150 130">
+        <line class="exone" x1="100" y1="5" x2="5" y2="100" stroke="#cf142b" stroke-width="18" />
+        <line class="extwo" x1="5" y1="5" x2="100" y2="100" stroke="#cf142b" stroke-width="18" />
+      </svg>
 
     </div>
 
-    <section id="question-count">
-      <span id="answered"></span><span>/</span><span id="remaining"></span>
-    </section>
+    <div id="check">
+      <svg id="check-svg" width="50" height="50" viewBox="0 0 140 160">
+        <polyline class="check" points="0,75 40,120 140,10" fill="none" stroke="#32cf32" stroke-width="19" />
+      </svg>
+    </div>
 
-    <section id="results">
+  </div>
 
-      <div class="score">
-        <p class="score-title">Score:</p>
-        <p id="percentage"></p>
-        <p id="correct"></p><span>/</span><p id="total"></p>
-      </div>
+  <section id="question-count">
+    <span id="answered"></span><span>/</span><span id="remaining"></span>
+  </section>
 
-      <form class="" action="/game" method="post">
-        <a href="index.html"><button type="submit" class="try-again">↠ try again ↞</button></a>
-      </form>
+  <section id="results">
 
-    </section>
+    <div class="score">
+      <p class="score-title">Score:</p>
+      <p id="percentage"></p>
+      <p id="correct"></p><span>/</span>
+      <p id="total"></p>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <form class="" action="/game" method="post">
+      <a href="index.html"><button type="submit" class="try-again">↠ try again ↞</button></a>
+    </form>
 
-    <script src="game.js"></script>
+  </section>
 
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="storage.js"></script>
+  <script src="game.js"></script>
+
+</body>
+
 </html>
