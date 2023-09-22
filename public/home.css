@@ -13,12 +13,13 @@ html {
   position: relative;
   margin: 10rem auto;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #d8dcdc;
 }
 
 h1 {
   color: #e8eded;
   font-size: 35px;
-  font-family: 'Oswald', sans-serif;
   font-weight: 200;
   border-bottom: 2px solid;
   padding-bottom: 1rem;
