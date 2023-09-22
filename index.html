@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Ontario G1 Practice Test</title>
-    <link rel="stylesheet" href="home.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Oswald:wght@200;300;400;600&display=swap" rel="stylesheet">
-  <body>
 
-    <section id="intro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Ontario G1 Practice Test</title>
+  <link rel="stylesheet" href="home.css">
+  </link>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Oswald:wght@200;300;400;600&display=swap"
+    rel="stylesheet">
 
-      <h1>Welcome to the Ontario G1 practice website!</h1>
+<body>
 
-      <form action="/" method="post">
-        <button class="begin-button" type="submit">↠ start ↞</button>
-      </form>
+  <section id="intro">
 
-    </section>
+    <h1>Welcome to the Ontario G1 practice website!</h1>
 
-    <section class="lines">
-      <span class="line"></span>
-      <span class="line"></span>
-    </section>
+    <form action="/" method="post">
+      <button class="begin-button" type="submit">↠ start ↞</button>
+      <a href="review-wrong.html" id="review-wrong-button" class="begin-button" style="display: none">! review wrong
+        answers !</a>
+    </form>
+
+  </section>
+
+  <section class="lines">
+    <span class="line"></span>
+    <span class="line"></span>
+  </section>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="public/storage.js" type="application/javascript"></script>
+  <script>
+    const store = new AnswersStore();
+    const wronglyAnswered = store.getWronglyAnswered();
+    if (wronglyAnswered.length !== 0) {
+      $("#review-wrong-button").css('display', 'unset');
+    }
+  </script>
+
+</body>
+
 </html>
