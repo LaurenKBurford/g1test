@@ -1,74 +1,106 @@
 var randomizedArray = [];
 var currentQuestion = "";
 var nextQuestion = "";
-var questionsAnswered = "";
+var questionsAnswered;
 var questionsTotal = "";
 var questionsRight = 0;
 
 var progressStore = new ProgressStore();
 
-window.addEventListener("load", function () {
+/**
+ * @callback getQuestionSetCb
+ * @param {(null|Questions)} result - An array of questions. `null` if failed
+ * @param {(null|Error)} error - Error if any. Indicates failure if not `null`
+ */
+
+/**
+ * Get question set asynchronously.
+ * @param {getQuestionSetCb} cb The callback
+ */
+function getQuestionSet(cb) {
   var httpRequest = new XMLHttpRequest();
-
-  // On page load, get questions from JSON file
-
-  httpRequest.open("GET", "questions.json", true);
-
   httpRequest.onload = () => {
     if (httpRequest.status == 200) {
       var questions = JSON.parse(httpRequest.responseText);
-
-      var array = questions.questions;
-
-      var length = array.length;
-      questionsTotal = length;
-
-      // Create a randomized array of all the questions
-
-      while (length > 0) {
-        var randomNumber = Math.floor(Math.random() * length);
-        randomizedArray.push(array[randomNumber]);
-        array.splice(randomNumber, 1);
-        length--;
-      }
-
-      progressStore.startProgress(randomizedArray);
-
-      // Create the first question
-
-      var firstQuestion = randomizedArray.pop();
-      currentQuestion = firstQuestion;
-      questionsAnswered = 1;
-
-      // Insert JSON data into HTML multiple choice question format
-
-      $("#questionImage").attr("src", firstQuestion.image);
-      $("#one").html(firstQuestion.one);
-      $("#two").html(firstQuestion.two);
-      $("#three").html(firstQuestion.three);
-      $("#four").html(firstQuestion.four);
-      $("#question-p").html(firstQuestion.question);
-
-      populateCount();
-
-      // Colapse image area if there is no image
-      if (firstQuestion.image == "") {
-        $("#questionImage").css("height", "3rem");
-      } else {
-        $("#questionImage").css("height", "15rem");
-      }
-
-      checkAnswer();
+      cb(questions.questions, null);
     } else if (httpRequest.status == 404) {
-      console.log("Not found.");
+      cb(null, new Error("Not found."));
     }
   };
-
-  httpRequest.onerror = () => {
-    console.log("Request failed.");
+  httpRequest.onerror = function () {
+    cb(null, new Error("Request failed."));
   };
-
+  httpRequest.open("GET", "questions.json", true);
   httpRequest.send();
+}
+
+function shouldResume() {
+  return window.location.pathname === "/resume";
+}
+
+/**
+ * Randomize given questions and return a new one
+ * @param {Questions} questionSet
+ * @returns {Questions} A new Array containing randomized questions from `questionSet`
+ */
+function shuffleSet(questionSet) {
+  var randomized = [];
+
+  var length = questionSet.length;
+  questionsTotal = length;
+
+  // Create a randomized array of all the questions
+
+  while (length > 0) {
+    var randomNumber = Math.floor(Math.random() * length);
+    randomized.push(questionSet[randomNumber]);
+    questionSet.splice(randomNumber, 1);
+    length--;
+  }
+  return randomized;
+}
+
+/**
+ * Initiate test.
+ * @param {Questions} questions - Complete set of questions to test the user
+ * @param {Progress} progress - Current progress
+ */
+function initTest(questions, progress) {
+  console.log(arguments);
+  if (progress === undefined) {
+    progress = { current: 1, total: questions.length };
+  }
+
+  questionsAnswered = progress.current - 1;
+  questionsTotal = progress.total;
+
+  randomizedArray = questions.slice(progress.current - 1);
+
+  checkAnswer();
+
+  nextSequence();
+}
+
+window.addEventListener("load", function () {
+  if (shouldResume()) {
+    var progress = progressStore.getProgress();
+    if (!progress) {
+      alert("No progress saved. Click okay to go back to start page.");
+      this.window.location = "/";
+      return;
+    }
+    initTest(progressStore.getQuestions(), progress);
+  } else {
+    getQuestionSet(function (questions, error) {
+      if (error) {
+        console.log(error.message);
+      } else {
+        var shuffled = shuffleSet(questions);
+        progressStore.startProgress(shuffled);
+        initTest(shuffled);
+      }
+    });
+  }
 });
 
 function populateCount() {
@@ -76,12 +108,16 @@ function populateCount() {
   $("#remaining").html(questionsTotal);
 }
 
-function nextSequence(checkAnswer) {
+function nextSequence() {
+  progressStore.saveProgress(questionsAnswered + 1);
+  if (randomizedArray.length == 0) {
+    gameFinished();
+    return;
+  }
+
   var nextQuestion = randomizedArray.pop();
   currentQuestion = nextQuestion;
   questionsAnswered++;
-
-  progressStore.saveProgress(questionsAnswered);
 
   $("#questionImage").attr("src", nextQuestion.image);
   $("#one").html(nextQuestion.one);
@@ -101,10 +137,6 @@ function nextSequence(checkAnswer) {
 
   $(".answer input:checked").prop("checked", false);
   $("#question").css("opacity", "1");
-
-  if (randomizedArray.length == 0) {
-    gameFinished();
-  }
 }
 
 function checkAnswer() {

@@ -57,7 +57,7 @@ Store.prototype.get = function get() {
  * @param {*} value
  */
 Store.prototype.set = function set(value) {
-  const serialized = JSON.stringify(value);
+  var serialized = JSON.stringify(value);
   if (serialized === "undefined") {
     // value is unserializable. Throw error
     throw new TypeError("Value is unserializable.");
@@ -110,7 +110,7 @@ ProgressStore.prototype = Object.create(Store.prototype, {
  * @returns {boolean}
  */
 ProgressStore.prototype.hasProgress = function hasProgress() {
-  return !!this.getQuestions();
+  return !!this.getProgress();
 };
 
 /**
@@ -118,7 +118,7 @@ ProgressStore.prototype.hasProgress = function hasProgress() {
  * @returns {Question[]}
  */
 ProgressStore.prototype.getQuestions = function getQuestions() {
-  return this.stored;
+  return this.stored.questions;
 };
 
 /**
@@ -128,14 +128,16 @@ ProgressStore.prototype.getQuestions = function getQuestions() {
  */
 
 /**
- * Get current progress
- * @returns {Progress}
+ * Get current progress. Returns `null` if there is no progress
+ * @returns {(null|Progress)}
  */
 ProgressStore.prototype.getProgress = function getProgress() {
-  return {
-    current: this.stored?.currentQuestion + 1,
-    total: this.stored?.questions,
-  };
+  return this.stored
+    ? {
+        current: this.stored?.currentQuestion + 1,
+        total: this.stored?.questions.length,
+      }
+    : null;
 };
 
 /**
@@ -148,7 +150,7 @@ ProgressStore.prototype.saveProgress = function saveProgress(current) {
   }
   this.set({
     ...this.stored,
-    current: current - 1,
+    currentQuestion: current - 1,
   });
 };
 
