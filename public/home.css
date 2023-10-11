@@ -18,21 +18,27 @@ html {
 h1 {
   color: #e8eded;
   font-size: 35px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 200;
   border-bottom: 2px solid;
   padding-bottom: 1rem;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .begin-button {
   font-size: 25px;
-    border: 7px double #949494;
-    padding: 6px 45px 10px;
-    background-color: #2d2e2e;
-    font-family: 'Oswald', sans-serif;
-    color: #e4f2f7;
-    transition: padding .5s ease, border-radius .5s ease;
-    margin-top: 7rem;
+  border: 7px double #949494;
+  padding: 6px 45px 10px;
+  background-color: #2d2e2e;
+  font-family: "Oswald", sans-serif;
+  color: #e4f2f7;
+  transition: padding 0.5s ease, border-radius 0.5s ease;
+  margin-top: 7rem;
 }
 
 .begin-button:hover {
@@ -41,16 +47,16 @@ h1 {
   border-radius: 10px;
 }
 
-.lines{
+.lines {
   margin-top: 10rem;
 }
 
 .line {
   display: block;
-    width: 75%;
-    margin: 5px auto;
-    height: 2px;
-    background-color: #e4f2f7;
+  width: 75%;
+  margin: 5px auto;
+  height: 2px;
+  background-color: #e4f2f7;
 }
 
 @media only screen and (max-width: 1000px) {
