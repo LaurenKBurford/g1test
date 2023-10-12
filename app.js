@@ -20,6 +20,12 @@ app.post("/", function (req, res) {
   }
 });
 
+app.get("/review-wrong.:ext", function (req, res) {
+  res.sendFile(__dirname + `/review-wrong.${req.params.ext}`);
+});
+
+app.use("/public", express.static("public"));
+
 app.get("/resume", function (req, res) {
   res.sendFile(__dirname + "/test.html");
 });

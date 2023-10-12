@@ -1,11 +1,12 @@
 var randomizedArray = [];
 var currentQuestion = "";
-var nextQuestion = "";
-var questionsAnswered;
+var currentQuestion = "";
+var currentProgress;
 var questionsTotal = "";
 var questionsRight = 0;
 
 var progressStore = new ProgressStore();
+var answerStore = new AnswersStore();
 
 /**
  * @callback getQuestionSetCb
@@ -67,18 +68,27 @@ function shuffleSet(questionSet) {
  */
 function initTest(questions, progress) {
   console.log(arguments);
-  if (progress === undefined) {
-    progress = { current: 1, total: questions.length };
-  }
-
-  questionsAnswered = progress.current - 1;
+  currentProgress = progress.current;
   questionsTotal = progress.total;
 
   randomizedArray = questions.slice(progress.current - 1);
 
-  checkAnswer();
+  console.log("randomizedArray:", randomizedArray);
+
+  setupAnswerCheck();
 
   nextSequence();
+}
+
+function redirectToMainPage() {
+  this.window.location = "/";
+}
+
+function redirectIfNoProgress(progress) {
+  if (!progress) {
+    alert("No progress saved. Click okay to go back to start page.");
+    this.window.location = "/";
+  }
 }
 
 window.addEventListener("load", function () {
@@ -89,47 +99,52 @@ window.addEventListener("load", function () {
       this.window.location = "/";
       return;
     }
+
     initTest(progressStore.getQuestions(), progress);
   } else {
+    answerStore.clear();
     getQuestionSet(function (questions, error) {
       if (error) {
         console.log(error.message);
       } else {
         var shuffled = shuffleSet(questions);
         progressStore.startProgress(shuffled);
-        initTest(shuffled);
+        var progress = progressStore.getProgress();
+        initTest(shuffled, progress);
       }
     });
   }
 });
 
 function populateCount() {
-  $("#answered").html(questionsAnswered);
+  $("#answered").html(currentProgress);
   $("#remaining").html(questionsTotal);
+  const wrongCount = currentProgress - questionsRight - 1;
+  $("#wrong-count").html(wrongCount);
+  if (wrongCount > 0) $("#review-wrong").addClass("has-wrong");
+  $("#right-count").html(questionsRight);
 }
 
 function nextSequence() {
-  progressStore.saveProgress(questionsAnswered + 1);
   if (randomizedArray.length == 0) {
     gameFinished();
     return;
   }
 
-  var nextQuestion = randomizedArray.pop();
-  currentQuestion = nextQuestion;
-  questionsAnswered++;
+  currentQuestion = randomizedArray.splice(0, 1)[0];
+  console.log("currentQuestion:", currentQuestion);
 
-  $("#questionImage").attr("src", nextQuestion.image);
-  $("#one").html(nextQuestion.one);
-  $("#two").html(nextQuestion.two);
-  $("#three").html(nextQuestion.three);
-  $("#four").html(nextQuestion.four);
-  $("#question-p").html(nextQuestion.question);
+  $("#questionImage").attr("src", currentQuestion.image);
+  $("#one").html(currentQuestion.one);
+  $("#two").html(currentQuestion.two);
+  $("#three").html(currentQuestion.three);
+  $("#four").html(currentQuestion.four);
+  $("#question-p").html(currentQuestion.question);
 
   populateCount();
 
   // Colapse image area if there is no image
-  if (nextQuestion.image == "") {
+  if (currentQuestion.image == "") {
     $("#questionImage").css("height", "3rem");
   } else {
     $("#questionImage").css("height", "15rem");
@@ -139,7 +154,7 @@ function nextSequence() {
   $("#question").css("opacity", "1");
 }
 
-function checkAnswer() {
+function setupAnswerCheck() {
   $(".answer input").click(function () {
     if ($(".answer input:checked").val() == currentQuestion.answer) {
       // Display a check if right
@@ -163,6 +178,7 @@ function checkAnswer() {
       // Go to the next question
       setTimeout(function () {
         if (randomizedArray.length > 0) {
+          progressStore.saveProgress(++currentProgress);
           nextSequence();
         }
       }, 1500);
@@ -173,6 +189,9 @@ function checkAnswer() {
         selectedAnswer.find(".check").css({ "background-color": "#defcf8" });
       }, 1700);
     } else {
+      const selectedValue = $(".answer input:checked").val();
+      answerStore.saveWrongAnswer(currentQuestion, selectedValue);
+
       // Display an X if wrong
       setTimeout(function () {
         $("#ex").css("display", "block");
@@ -195,6 +214,7 @@ function checkAnswer() {
       // Go to next question
       setTimeout(function () {
         if (randomizedArray.length > 0) {
+          progressStore.saveProgress(++currentProgress);
           nextSequence();
         }
       }, 1500);

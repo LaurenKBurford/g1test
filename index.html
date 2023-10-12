@@ -29,6 +29,8 @@
         <span id="start-anew-text" style="display: none"> anew </span>
         ↞</button>
       <p><small>Progress is saved on this device</small></p>
+      <a href="review-wrong.html" id="review-wrong-button" class="begin-button" style="display: none">! review wrong
+        answers !</a>
     </form>
 
   </section>
@@ -40,8 +42,16 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="storage.js"></script>
-  <script src="home.js"></script>
+  <script src="public/storage.js" type="application/javascript"></script>
+  <script src="public/home.js"></script>
+  <script>
+    const store = new AnswersStore();
+    const wronglyAnswered = store.getWronglyAnswered();
+    if (wronglyAnswered.length !== 0) {
+      $("#review-wrong-button").css('display', 'unset');
+    }
+  </script>
+
 </body>
 
 </html>

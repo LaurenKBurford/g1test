@@ -13,6 +13,30 @@
 
 <body>
 
+  <section id="question-count">
+    <p>
+      <span id="answered"></span><span>/</span><span id="remaining"></span>
+    </p>
+    <table id="right-wrong-counts">
+      <tr>
+        <td id="wrong-count"></td>
+        <td>wrong</td>
+        <td><a target="_blank" id="review-wrong" href="/review-wrong.html"><svg xmlns="http://www.w3.org/2000/svg"
+              width="20" height="20" viewBox="0 0 20 20">
+              <title>
+                Review wrong answers in new tab
+              </title>
+              <path d="M17 17H3V3h5V1H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2z" />
+              <path d="M19 1h-8l3.29 3.29-5.73 5.73 1.42 1.42 5.73-5.73L19 9V1z" />
+            </svg></td>
+      </tr>
+      <tr>
+        <td id="right-count"></td>
+        <td>right</td>
+      </tr>
+    </table>
+  </section>
+
   <section id="question">
 
     <img id="questionImage" src="">
@@ -62,10 +86,6 @@
 
   </div>
 
-  <section id="question-count">
-    <span id="answered"></span><span>/</span><span id="remaining"></span>
-  </section>
-
   <section id="results">
 
     <div class="score">
@@ -83,8 +103,16 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="storage.js"></script>
-  <script src="game.js"></script>
+  <script src="/public/storage.js" type="application/javascript"></script>
+  <script src="/public/game.js" type="application/javascript"></script>
+
+  <footer>
+    <small>
+      New window icon used above is authored by <a
+        href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">MGalloway
+        (WMF)</a> and licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0</a>
+    </small>
+  </footer>
 
 </body>
 

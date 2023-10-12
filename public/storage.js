@@ -132,6 +132,7 @@ ProgressStore.prototype.getQuestions = function getQuestions() {
  * @returns {(null|Progress)}
  */
 ProgressStore.prototype.getProgress = function getProgress() {
+  console.log("getprogress:", this.stored);
   return this.stored
     ? {
         current: this.stored?.currentQuestion + 1,
@@ -159,9 +160,48 @@ ProgressStore.prototype.saveProgress = function saveProgress(current) {
  * @param {Questions} questions Array of questions in current order
  * @throws {Error} when
  */
-ProgressStore.prototype.startProgress = function start(questions) {
+ProgressStore.prototype.startProgress = function startProgress(questions) {
   this.set({
     questions,
-    current: 1,
+    currentQuestion: 0,
   });
+};
+
+const WRONGLY_ANSWERED_KEY = "wronglyAnswered";
+
+AnswersStore.prototype = Object.create(Store.prototype, {
+  constructor: {
+    value: AnswersStore,
+    enumerable: false,
+    writable: true,
+    configurable: true,
+  },
+});
+
+/**
+ * A store that stores wrongly answered questions
+ * @class
+ * @extends Store
+ */
+function AnswersStore() {
+  Store.call(this, WRONGLY_ANSWERED_KEY, []);
+}
+
+AnswersStore.prototype.isAlreadyWrong = function isAlreadyWrong(question) {
+  return (
+    this.stored.filter((q) => q.question.question === question.question)
+      .length > 0
+  );
+};
+
+AnswersStore.prototype.saveWrongAnswer = function saveWrongAnswer(
+  question,
+  answer
+) {
+  if (this.isAlreadyWrong(question)) return;
+  this.set(this.stored.concat([{ question, answer }]));
+};
+
+AnswersStore.prototype.getWronglyAnswered = function getWronglyAnswered() {
+  return this.get();
 };
